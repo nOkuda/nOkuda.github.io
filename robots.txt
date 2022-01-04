@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nOkuda.github.io/sitemap.xml

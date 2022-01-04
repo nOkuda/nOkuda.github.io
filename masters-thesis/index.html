@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+<title>Labeling Data for the Best Model | Nozomu&#x27;s Projects</title>
+
+
+
+<meta property="og:title" content="Labeling Data for the Best Model">
+
+
+
+<meta name="author" content="Nozomu Okuda">
+
+
+<meta property="og:locale" content="en-US">
+
+
+<meta name="description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+<meta property="og:description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+
+
+
+<link rel="canonical" href="https://nOkuda.github.io/masters-thesis/">
+<meta property="og:url" content="https://nOkuda.github.io/masters-thesis/">
+
+
+
+<meta property="og:site_name" content="Nozomu&#x27;s Projects" />
+
+
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2017-08-01T00:00:00+00:00">
+
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+  <meta property="twitter:title" content="Labeling Data for the Best Model">
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "author": {
+    "@type":"Person",
+	  "name":"Nozomu Okuda",
+  },
+  "description": "A showcase site for Nozomu Okuda&#x27;s software and data projects",
+  "url": "https://nOkuda.github.io/masters-thesis/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Labeling Data for the Best Model"
+  
+    
+    
+      "datePublished":"2017-08-01T00:00:00+00:00",
+    
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://nOkuda.github.io/masters-thesis/"
+    },
+  
+}
+</script>
+
+  <link rel="stylesheet" href="https://nOkuda.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://nOkuda.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://nOkuda.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://nOkuda.github.io/assets/apple-touch-icon.png">
+
+  
+
+  
+
+  
+  
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+	integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+	integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+	integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+	onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://nOkuda.github.io">
+        <h2 class="nav-title">Nozomu&#x27;s Projects</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://nOkuda.github.io">Projects</a></li>
+          
+            <li><a href="https://nOkuda.github.io/tags">Tags</a></li>
+          
+            <li><a href="https://nOkuda.github.io/about">About</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+  <div class="post">
+  	<h1 class="post-title">Labeling Data for the Best Model</h1>
+  	<div class="post-line"></div>
+  	<p>Suppose that you have a large set of unlabeled text data.
+Assuming you have limited time to label the data, which subset of the data should you label to get the best machine learning model?
+And what order should that subset be labeled in?
+These were the questions I worked on for my master's thesis, which I completed in the summer of 2017.</p>
+<span id="continue-reading"></span>
+<p>The thesis is <a href="https://scholarsarchive.byu.edu/etd/6906/">available for download</a>.
+The code used to collect and analyze the data discussed in the thesis is <a href="https://github.com/nOkuda/reviewlabeljob">available on GitHub</a>.</p>
+<h3 id="problem">Problem</h3>
+<p>Sometimes, you have a lot of text data on hand that might give you important insights if you could organize them into categories.
+Maybe you have a bunch of opinions submitted regarding a proposed policy change, and you'd like to see how supported the policy change is.
+Or maybe you've been given a collection of leaked e-mail messages that may or may not have contained government secrets, and you'd like to know which government secrets were leaked.
+You could meticulously label all of the documents, one by one, but that could be tedious and time-consuming.
+This would be especially problematic if you had a deadline for when you needed to have drawn insights from the documents.</p>
+<p>The strategy I explored in my master's thesis was training a supervised machine learning algorithm on a subset of the documents.
+The open question for this strategy is to decide which subset of the documents should be labeled to produce the best model within an allotted time.
+Furthermore, once we know which subset to label, we would like to know what order we should have humans label the documents.</p>
+<h3 id="data-selection">Data Selection</h3>
+<p>While my thesis works with a few data sets, the one data set that gets used throughout the thesis is a set of Amazon product reviews.
+These product reviews contain (1) text data that the reviewer has written about a product and (2) a numerical rating from one to five indicating how highly the reviewer rated the product.
+Each review serves as a document, and the associated rating serves as the document's true label.
+This allowed me to use the data set for supervised machine learning.</p>
+<p>In my thesis, I tried converting the text data into a few different modifications of features known as &quot;topics&quot;, as defined by the field of topic modeling.
+Topic modeling is an unsupervised technique for learning word distributions present in a set of documents.
+Each topic is a particular probabilistic distribution of words, and there is an algorithm for inferring the distribution of topics in each document.</p>
+<h3 id="document-selection-for-labeling">Document Selection for Labeling</h3>
+<p>To determine which subset of the data should be labeled, I ran simulation experiments measuring the predictive \(R^2\) of the <a href="https://aclanthology.org/N15-1076/">supervised anchor words model</a> as I expanded the set of labeled documents.
+In addition to predictive \(R^2\), I measured how long each selection method took.
+The workflow for each simulation was as follows:</p>
+<ul>
+<li>start with 20 documents in the &quot;labeled&quot; pile (act as if all other documents are unlabeled)</li>
+<li>until 300 documents are labeled:
+<ul>
+<li>train a model on the labeled documents</li>
+<li>compute the next document to add to the labeled pile</li>
+<li>reveal the label of the chosen document and add it to the labeled pile</li>
+</ul>
+</li>
+</ul>
+<p>The code I used to run these experiments is <a href="https://github.com/nOkuda/activetm">available on GitHub</a>.</p>
+<p>Of the three document selection methods tested, random selection seemed best.
+For the most part, random selection seemed to improve model performance about as efficiently or more efficiently than the other selection methods.
+Moreover, random selection was clearly the fastest selection method.
+This is an important point, since faster selection of next document to label means more labeled documents for an allotted amount of labeling time.</p>
+<h3 id="context-switching-effect">Context Switching Effect</h3>
+<p>Knowing that labeling a random subset of documents is the most efficient way to train a supervised model, the next question to answer is what order those documents should be labeled.
+To answer this question, I devised and ran a user study that measured the time humans took to label documents presented in a particular order.
+In the user study, participants saw the text of an Amazon review one by one and had the task of labeling the text with the rating they thought corresponded with the text.</p>
+<p>Unbeknownst to the participants, the Amazon reviews were in a particular order.
+Using topic modeling, I organized reviews by their most prevalent topic, and the participants would label 16 documents in a row with the same most prevalent topic.
+The next 16 documents would then have a different most prevalent topic.
+This pattern would continue until participants had completed labeling five such 16-document groups.
+We can refer to these 16-document groups as &quot;topic groups&quot;.</p>
+<p>Every participant's set of documents to label was randomly generated at the time of the study, and the amount of time each took to label the documents was recorded.
+The hypothesis was that forcing humans to make a context switch from a group of documents with one most prevalent topic to a group of documents with a different most prevalent topic would increase labeling time of the first document of the set.</p>
+<p>I implemented the backend code for the user study using Python and Flask.
+A labmate helped me implement the frontend display for the participants in Javascript.
+Our work is <a href="https://github.com/nOkuda/reviewlabeljob">available on GitHub</a>.</p>
+<p>Using the Wilcoxon-Mann-Whitney test, I showed that the labeling time of the first document of each topic group took longer than labeling the seventh and later documents of the same topic group.
+This suggests that context switching really does cause an increase in document labeling time.</p>
+<p>To definitively show that reducing context switching would lead to faster document labeling times, I devised and ran a second user study.
+This time, each participant received two treatments, one immediately after the other.
+One treatment was to see the documents in random order.
+The other treatment was to see documents by topic groups.
+Which treatment came first for each participant was randomly determined.</p>
+<p>In analyzing the data collected from this second user study, I resorted once more to the Wilcoxon-Mann-Whitney test and found that random labeling order tended to have longer labeling times than labeling by topic groups.
+While paired t-test seemed like the obvious analysis to perform on this data, I found through the Shapiro-Wilk test that neither random labeling times nor topic-ordered labeling times were normally distributed, meaning that an assumption of the paired t-test was violated.
+Therefore, I conducted the Wilcoxon-Mann-Whitney test in place of the paired t-test.</p>
+<h3 id="insights">Insights</h3>
+<p>Using the data I had collected, I concluded that the best way to label a set of documents is to
+(1) randomly choose as large a subset as you can afford and
+(2) show the documents by topic groups.
+Furthermore, the data I collected demonstrated that the average labeling time of documents shown by topic group is about 13% less than the average labeling time of documents shown in random order.
+Even if the models I worked with have now fallen out of favor, these conclusions about how to label your text data can be applied to any model that requires labeled documents.
+So the next time you have a team of labelers and a stack of documents to label, keeping these points in mind might help you.</p>
+<h3 id="retrospective">Retrospective</h3>
+<p>The experience of my master's degree in computer science, culminating as it did in my thesis, has taught me the importance of trusting others.
+Or rather, reflecting on the experience has since brought me to this realization.
+After my committee had already approved my thesis, I was reviewing it one last time before submitting it for archiving.
+That evening, I thought I saw a mistake and made a change I thought would correct it.
+Later on, I discovered that my change had actually introduced an error, and so you can still find in the archived version of my thesis a division that does not make sense.
+Luckily, the final value I asserted was correct; but I swapped the divisor and dividend in my explanation for how I calculated the value.
+If I had trusted my committee to find and notify me of the mistake I had imagined, I would not have made the change, and my thesis would have remained correct.</p>
+<p>Another example of the importance of trusting others came from an important lesson my advisor taught me.
+I came into his office as usual to a weekly meeting with him, and we were reviewing comments he had made on the draft of my thesis.
+As he gave me feedback, I zealously defended the choices I had made.
+The defensive nature of my reaction was forceful enough that he stopped his feedback on my thesis for a moment and pointed out (with some exasperation, as I recall) that he was making suggestions to help improve my work.
+That bit of wisdom changed my perspective.
+Before, I had imagined that negative comments on my work were marks against me, tallied up to hurt me.
+From that perspective, of course I would endeavor to invalidate comments meant to hurt me.
+I have since come to see the importance of being more considerate of the people making comments about my work.
+They are not all attacking me, and some of them might even be sharing helpful information.
+I really appreciate that lesson my advisor took the time to help me learn.</p>
+
+  </div>
+
+	
+
+  <div class="pagination">
+  	<a href="https://nOkuda.github.io/ct-scanning/" class="left arrow">&#8592;</a>
+		<a href="#" class="top">Top</a>
+		
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2022-01-04T01:35:57.033987523+00:00">2021-2022</time> Nozomu Okuda. Made with Zola using a modification of the Tale-Zola theme.</span>
+  </footer>
+  
+</body>
+</html>

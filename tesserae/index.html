@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+<title>Tesserae | Nozomu&#x27;s Projects</title>
+
+
+
+<meta property="og:title" content="Tesserae">
+
+
+
+<meta name="author" content="Nozomu Okuda">
+
+
+<meta property="og:locale" content="en-US">
+
+
+<meta name="description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+<meta property="og:description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+
+
+
+<link rel="canonical" href="https://nOkuda.github.io/tesserae/">
+<meta property="og:url" content="https://nOkuda.github.io/tesserae/">
+
+
+
+<meta property="og:site_name" content="Nozomu&#x27;s Projects" />
+
+
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2021-05-01T00:00:00+00:00">
+
+
+
+  <link rel="prev" href="https://nOkuda.github.io/ct-scanning/">
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+  <meta property="twitter:title" content="Tesserae">
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "author": {
+    "@type":"Person",
+	  "name":"Nozomu Okuda",
+  },
+  "description": "A showcase site for Nozomu Okuda&#x27;s software and data projects",
+  "url": "https://nOkuda.github.io/tesserae/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tesserae"
+  
+    
+    
+      "datePublished":"2021-05-01T00:00:00+00:00",
+    
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://nOkuda.github.io/tesserae/"
+    },
+  
+}
+</script>
+
+  <link rel="stylesheet" href="https://nOkuda.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://nOkuda.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://nOkuda.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://nOkuda.github.io/assets/apple-touch-icon.png">
+
+  
+
+  
+
+  
+  
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+	integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+	integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+	integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+	onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://nOkuda.github.io">
+        <h2 class="nav-title">Nozomu&#x27;s Projects</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://nOkuda.github.io">Projects</a></li>
+          
+            <li><a href="https://nOkuda.github.io/tags">Tags</a></li>
+          
+            <li><a href="https://nOkuda.github.io/about">About</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+  <div class="post">
+  	<h1 class="post-title">Tesserae</h1>
+  	<div class="post-line"></div>
+  	<p>Tesserae is a software tool for finding intertexts between works of literature, primarily in Latin and ancient Greek.
+Working on this open source project, both in paid an unpaid positions, gave me many opportunities to practice software development.</p>
+<span id="continue-reading"></span><h2 id="overview">Overview</h2>
+<p>The Tesserae project develops computational tools to find intertexts between works of literature.
+For those unfamiliar with the term &quot;intertext&quot;, it is a pair of literary passages such that one passage can cause readers to recall the other one.
+The term &quot;allusion&quot; is probably better known, though scholars today tend to frown upon its use.</p>
+<p>The <a href="https://tesserae.caset.buffalo.edu/">Tesserae website</a> makes Tesserae's intertext finding results available to scholars who study Latin and ancient Greek literature.
+The intertext finding algorithm, commonly referred to as &quot;Tesserae search&quot;, looks for matching words between two passages and then scores that pairing of passages based on the matching words.
+The rarer the matching words and the closer together the matching words are located in the two passages, the higher the score.
+Further details on Tesserae's methods are explained in <a href="https://academic.oup.com/dsh/article-abstract/30/4/503/480607">Forstall et al. (2015) <em>Modeling the scholars: Detecting intertextuality through enhanced word-level n-gram matching</em></a> (<a href="https://tesserae.caset.buffalo.edu/blog/wp-content/uploads/2012/10/Modeling-the-Scholars-2013-11-6LLC-preprint1.pdf">Preprint</a>).</p>
+<p>Of significance is that this project has been directed primarily by academics in the humanities.
+Because of my interest in both programming and Latin, the Tesserae Project was, in many ways, the perfect project for me to become involved with.</p>
+<h2 id="beginnings">Beginnings</h2>
+<p>My initial dealings with the members of the Tesserae Project began near the end of my time working on a master's degree in computer science.
+I had reached out to a researcher about getting access to a data set he had, and he replied with, among other things, encouragement to look into the Tesserae Project.
+He had, in fact, previously been a key member of the Tesserae Project before starting on his own path.
+That initial encouragement eventually led me to join the Tesserae Project as a volunteer in August 2017 (also coinciding with when I started my PhD program in Classics at the University at Buffalo).</p>
+<p>At that time, Tesserae was written in Perl.
+The website used CGI to pass user-selected parameters to the Perl code, which then proceeded to run Tesserae search.
+This would first read in previously serialized information from disk, look up matching word information, and score the paired passages.
+Results were then serialized back to disk and displayed to the user in pages.</p>
+<p>The <a href="https://github.com/tesserae/tesserae">Perl code</a> (<a href="https://tesseraev3.caset.buffalo.edu/">old site</a>) was adequate but lacked some nicer features.
+Perhaps the most difficult code to understand was the most critical: the part that computed the results.
+The main body of the code takes up several hundred lines of bookkeeping on data structures created from a completely different script, the text ingestion script.
+A few subroutines had thankfully shortened the main body, but even these subroutines required an intimate knowledge of the data structures serialized by the text ingestion script.
+From a software engineering perspective, there were many aspects of this code that could be improved.</p>
+<p>In my first months as a volunteer, I was tasked with investigating options for replacing the Perl code.
+An earlier discarded version of the software was available, and I was asked to see whether it could be adapted to the present needs of the project.
+It was a code base utilizing the Solr text search software, with a custom Scala plugin to perform Tesserae scoring.
+The website was built in Django, and Celery was used to pass information between Solr and Django.
+The installation was relatively easy, thanks to a Vagrant image, and it appears that <a href="https://github.com/nOkuda/tesserae-ng">I spent a little time working on making fixes</a>, but I had difficulty imagining this code base to be understandable to a typical humanities graduate student.
+I recommended that this version remain discarded and that a new version be built in Python to attract more contributors.</p>
+<h2 id="mentoring">Mentoring</h2>
+<p>Coinciding with my first months on the Tesserae project, I met other students interested in the project as well.
+There was a particular group of four of them (all graduate students from the Linguistics department) with whom I met every week to discuss the project.
+As, at that time, I was much stronger in coding ability than they were, I attempted to share my coding knowledge with them at those weekly meetings.
+In addition to helping them learn Python, I introduced them to working with git and GitHub.
+By the end of that first semester, we had cobbled together a <a href="https://github.com/nOkuda/pytesserae">minimally working Python version of the software</a>.
+Although that code was never officially adopted by the Tesserae project, I think that all of us volunteers came away from the experience with valuable lessons.
+Some of that group found that they did not want to code; others took that initial experience with Python and continued honing those skills in other projects.
+I myself came away with more ideas about how I could change the structure of the Perl code.
+In fact, I went on to write experimental versions of the code in <a href="https://gitlab.com/nozomu.okuda/compare-tess/-/tree/master/cpp">C++</a> and then in <a href="https://gitlab.com/nozomu.okuda/compare-tess/-/tree/master/js">Javascript</a> to work through ideas about how to organize the code.</p>
+<p>At a later time, I taught an unofficial weekly Python course for humanities students.
+A volunteer in the Tesserae project was interested to see what it was like coding in Python, so she organized a group of similarly interested students, scheduled a room for us to meet in, and asked me to share my knowledge.
+I was happy to do so, and I enjoyed the experience.
+When the professor in charge of the Tesserae project asked for my opinion on who should be the Tesserae Fellow (i.e., the graduate student in charge of the day to day operations of the project) for the next school year, I was able to recommend the volunteer who had organized the unofficial course, citing her previous involvement with the project as well as her motivation in organizing the course.
+She did, in fact, become the next Tesserae Fellow and fulfilled her duties well.</p>
+<p>I had the opportunity to mentor one more group of volunteers --- another two graduate students from Linguistics.
+One was already proficient in coding, and the other learned over time; neither had worked on code collaboratively before.
+I guided both through setting up development environments and becoming familiar with git and GitHub.</p>
+<h2 id="updating-the-code">Updating the Code</h2>
+<p>In 2018, the Tesserae Project won a research grant from the National Endowment for the Humanities (NEH) to make the Tesserae software easier to integrate with other digital humanities tools.
+I was the one person selected from my school to be funded through this two-year grant; another graduate student from the collaborating school, likewise receiving funding, worked with me to fulfill the promises made in the grant application.
+Although I was more familiar with the old code and had already drawn up some ideas for improving it, the other student was given the responsibility of architecting and implementing the new backend.
+I was instead tasked with designing and developing a REST API through which other software could access Tesserae's functionality.
+I spent much of my time on the project that first year of funding learning about REST and Web APIs.</p>
+<p>As the second year began, the <a href="https://github.com/tesserae/tesserae-v5">Python backend code</a> was beginning to take solid enough shape that I could begin directly calling it in the API code I had mocked.
+Soon, the backend concerns became more of my responsibility as my teammate took on responsibility for the frontend.
+During this time, I improved the speed of some parts of the code, particularly in the calls made to the database (MongoDB), the database queries, and the post-processing code.
+This was accomplished largely through carefully planned automated tests as well as measuring results with a profiler.
+I also worked with the system administrator to deploy the API and backend code.</p>
+<h2 id="rest-api">REST API</h2>
+<p>As mentioned above, my main responsibility was designing and implementing a REST API for Tesserae.
+The main capabilities of Tesserae made available through the API are</p>
+<ul>
+<li>Tesserae's catalog of texts</li>
+<li>Recommendations for words to ignore in the texts (i.e., stopwords), as calculated by word frequencies</li>
+<li>Tesserae search as a service</li>
+<li>Results from a Tesserae search</li>
+</ul>
+<p>For those interested in futher details, the <a href="https://tesserae.caset.buffalo.edu/docs/api/">documentation</a>
+and the <a href="https://github.com/tesserae/apitess">code</a> are available.</p>
+<p>The most difficult part of designing the REST API was fitting Tesserae search into a RESTful pattern.
+Because Tesserae search requires a fair bit of computation, it was unrealistic to expect a response from the API server within a minute for all search queries.
+My solution was to introduce an intermediate step between submitting a search request and retrieving the search results.
+This was implemented by creating an identifier for each search request; that identifier would be used to retrieve the corresponding results.
+If the identifier is used before the results are ready, the API responds so; otherwise, the API responds with the first page of results.</p>
+<p>Implementing this two-step process also required implementing a simple asynchronous / multiprocessing work queue (in the style of a solution to the producer-consumer problem).
+When the API receives a search request, it queries the backend to see if a search with the exact same parameters is already in the database.
+If so, the API responds to the client with the identifier of the matching search already in the database.
+Otherwise, the API receives a new identifier from the backend, pushes the identifier and the search request onto the queue, and responds to the client with the new identifier.
+When the backend is ready to run search, it takes the first job off of the queue and performs the search requested.</p>
+<h2 id="desktop-application">Desktop Application</h2>
+<p>One promise made in the project's grant proposal was to make the Tesserae software available as a desktop application.
+This is desirable, for example, when a scholar is working with texts that are not allowed to be published yet.
+In this case, the Tesserae project cannot host the texts on the public database, so it would be better for the scholar to run Tesserae search on a personal database.
+In order to make this possible, I created a <a href="https://github.com/tesserae/electron-tesserae">wrapper for the frontend, backend, and API in electron-js</a>.</p>
+<p>Despite my previous dislike of the language, I took this opportunity to become more familiar with Javascript.
+My attitude toward Javascript softened a little as a result of finally understanding how async and Promises are related.</p>
+<p>I also managed to package the Python code with PyInstaller so that the Python code could run on different operating systems.</p>
+<p>There are some major discomforts on the initial use of the desktop application, given the long time it takes to download and install both MongoDB and the initial data for the database.
+It was also hard to determine whether the desktop application really could run on multiple operating systems --- though I was able to verify that it worked on Ubuntu 20.04 and on Windows 10.</p>
+<h2 id="multitext">Multitext</h2>
+<p>One final major contribution I made to the new Python code of the Tesserae project was implementation of what was called &quot;multitext search&quot;.
+Because Tesserae search can take a long time to complete, multitext search was developed by a previous generation of the Tesserae project to find intertexts shared across multiple works.
+First, a normal Tesserae search is run between two works.
+Then, the results from the two works is used to look up only the matching words in the list of other works specified in multitext search.
+This takes much less time to complete than running Tesserae searches between every pairing of works specified in a list.</p>
+<p>My <a href="https://github.com/tesserae/tesserae-v5/blob/master/tesserae/utils/multitext.py">implementation of multitext search in the new backend</a> utilizes Python's built-in version of sqlite to store SQL databases for each multitext-enabled work ingested into Tesserae.
+These databases contain information about where each pair of words occurs in a work.
+Then, during multitext search time, my implementation queries the appropriate SQL databases for only the word pairs that occur in the results of the initial Tesserae search and collates the retrieved data.</p>
+<h2 id="retrospective">Retrospective</h2>
+<p>One of the biggest realizations I made in my work with Tesserae is that software development is a social activity.
+Knowledge must be passed down from one generation of maintainers to another for a project to survive.
+In many ways, the lack of easy access to the minds of the earlier implementers was the impetus for my initial push towards rewriting the code.
+I had the pleasure of interacting with a number of earlier implementers a few times, and each time, I better understood more parts of the earlier code --- particularly in why they were written the way they were.
+Still, time had made even their recollections fuzzy so that in some ways, I knew the old code better than they did.</p>
+
+  </div>
+
+	
+
+  <div class="pagination">
+  	<a href="https://nOkuda.github.io/participation-tracker/" class="left arrow">&#8592;</a>
+		<a href="#" class="top">Top</a>
+		<a href="https://nOkuda.github.io/ct-scanning/" class="right arrow">&#8594;</a>
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2022-01-04T01:35:57.033562420+00:00">2021-2022</time> Nozomu Okuda. Made with Zola using a modification of the Tale-Zola theme.</span>
+  </footer>
+  
+</body>
+</html>

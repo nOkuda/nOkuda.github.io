@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+<title>Software Development for CT Scanning Research | Nozomu&#x27;s Projects</title>
+
+
+
+<meta property="og:title" content="Software Development for CT Scanning Research">
+
+
+
+<meta name="author" content="Nozomu Okuda">
+
+
+<meta property="og:locale" content="en-US">
+
+
+<meta name="description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+<meta property="og:description" content="A showcase site for Nozomu Okuda&#x27;s software and data projects">
+
+
+
+<link rel="canonical" href="https://nOkuda.github.io/ct-scanning/">
+<meta property="og:url" content="https://nOkuda.github.io/ct-scanning/">
+
+
+
+<meta property="og:site_name" content="Nozomu&#x27;s Projects" />
+
+
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2018-08-01T00:00:00+00:00">
+
+
+
+  <link rel="prev" href="https://nOkuda.github.io/masters-thesis/">
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+  <meta property="twitter:title" content="Software Development for CT Scanning Research">
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "author": {
+    "@type":"Person",
+	  "name":"Nozomu Okuda",
+  },
+  "description": "A showcase site for Nozomu Okuda&#x27;s software and data projects",
+  "url": "https://nOkuda.github.io/ct-scanning/",
+  "@context":"https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Software Development for CT Scanning Research"
+  
+    
+    
+      "datePublished":"2018-08-01T00:00:00+00:00",
+    
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://nOkuda.github.io/ct-scanning/"
+    },
+  
+}
+</script>
+
+  <link rel="stylesheet" href="https://nOkuda.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://nOkuda.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://nOkuda.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://nOkuda.github.io/assets/apple-touch-icon.png">
+
+  
+
+  
+
+  
+  
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+	integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+	integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+	integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+	onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://nOkuda.github.io">
+        <h2 class="nav-title">Nozomu&#x27;s Projects</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://nOkuda.github.io">Projects</a></li>
+          
+            <li><a href="https://nOkuda.github.io/tags">Tags</a></li>
+          
+            <li><a href="https://nOkuda.github.io/about">About</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+  <div class="post">
+  	<h1 class="post-title">Software Development for CT Scanning Research</h1>
+  	<div class="post-line"></div>
+  	<p>How can a team write software in a way that helps them explore a research question?
+As an intern at Buffalo Manufacturing Works in the summer of 2018 (this company would later officially rebrand as the Buffalo office of EWI),
+I had the opportunity to help my team research new methods for industrial CT scanning.</p>
+<span id="continue-reading"></span>
+<p>As a result of my contributions, I had the honor of getting my name on the patent that resulted from this project (<a href="https://patents.google.com/patent/US10969771B2/en">Computed tomography for non-destructive evaluation of manufactured parts, US10969771B2</a>).</p>
+<h2 id="business-motivation">Business Motivation</h2>
+<p>CT scans are probably most familiar from the medical field, where you might stand or lay down in a contraption that moves around you to take x-ray images of your body.
+Doctors can use the results of a CT scan to predict damage to your internal organs and prescribe appropriate measures to help you heal.
+In an industrial setting, CT scans serve a similar function.
+A manufactured part undergoes a CT scan, and a technician or engineer interprets the results to predict faults in the part.</p>
+<p>CT scanners work by taking multiple x-ray images around a particular object.
+Using some math, the images can be used to reconstruct a 3D model of the object.
+The off-the-shelf solutions for industrial CT scanning used one method of 3D reconstruction that required taking many x-ray images.
+Buffalo Manufacturing Works, as contracted by a certain client, investigated a different 3D reconstruction technique that required fewer x-ray images but more computing power.
+The idea was that the usual method took a long time because of the number of images it needed to make a good reconstruction,
+but the method we were investigating could potentially take a shorter period of time because fewer images would be required.
+While the new method would take more computational time to provide a reconstruction of similar quality,
+the hypothesis was that it would still take less time in total using the new method than the old.</p>
+<h2 id="software-development-practices">Software Development Practices</h2>
+<p>To help the project in investigating new methods for 3D reconstruction from CT scans,
+I shared my knowledge of version control (git) and unit testing (pytest).
+My knowledge of Python programming was also stronger than my co-workers',
+so I got to coach them in that area as well.
+Finally, I shared with them my knowledge of the process of code reviews and pull requests.</p>
+<h2 id="proud-moments">Proud Moments</h2>
+<p>Besides helping my team build and maintain a code repository, I got to do some deeper technical work on the project.
+One of my contributions was applying the image processing technique of watershedding to the 3D reconstruction algorithm.
+We were having trouble reconstructing a sharp distinction between object and non-object,
+and I remembered watershedding from my image processing class.
+Watershedding is an algorithm that analyzes an image to find segments within it.
+By applying watershedding to the x-ray images, I was able to get a sharper distinction between object and non-object in the reconstruction.</p>
+<p>Another contribution I made was utilizing the ASTRA toolbox to run the computations on a GPU (Graphics Processing Unit).
+We were already using the ASTRA toolbox to run our computations on a GPU,
+but we were running into out-of-memory errors as we increased the resolution of our reconstruction.
+Our mathematics expert noted that the method we were working with could conceivably be decomposed into sub-problems that would fit onto the GPU memory,
+but we weren't sure how much effort it would take to implement that solution.
+Near the end of my time working on this project, I dove deep into the ASTRA toolbox documentation and found code that suggested that the sub-problem decomposition had already been implemented in that library.
+After a few failed attempts, I finally got ASTRA toolbox to work as I wished, demonstrating that the reconstruction that originally could only fit on the large GPU in our workstation could be solved on my laptop's GPU, which had many times less memory.</p>
+<p>Perhaps the most prominent legacy of this work is resulting the <a href="https://patents.google.com/patent/US10969771B2/en">patent</a>.
+My co-workers felt grateful enough for my contributions that they even included me as an author on it.</p>
+<h2 id="retrospective">Retrospective</h2>
+<p>In some ways, it is a miracle that I was trusted with such a large responsibility on this project.
+My software engineering experience out in industry was limited to a few months as an intern at one company a few years previous.
+I may have had help from other contributors in some of my past code projects, but those projects were largely individual efforts.
+Also, I don't think I had ever worked on a project that brought in so much money.</p>
+<p>I got to do another internship with the company again three years later,
+and my previous co-workers excitedly showed me how they were still using the software development techniques I had taught them.
+I was glad to see that (1) they appreciated what I did and (2) what I taught them was serving them well.</p>
+
+  </div>
+
+	
+
+  <div class="pagination">
+  	<a href="https://nOkuda.github.io/tesserae/" class="left arrow">&#8592;</a>
+		<a href="#" class="top">Top</a>
+		<a href="https://nOkuda.github.io/masters-thesis/" class="right arrow">&#8594;</a>
+  </div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2022-01-04T01:35:57.033806721+00:00">2021-2022</time> Nozomu Okuda. Made with Zola using a modification of the Tale-Zola theme.</span>
+  </footer>
+  
+</body>
+</html>
